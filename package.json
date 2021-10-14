@@ -1,0 +1,22 @@
+{
+  "name": "foundrystats",
+  "version": "1.0.0",
+  "description": "Bot with associated website for displaying stats based on FoundryVTT dice rolls",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Evansdava/FoundryStats.git"
+  },
+  "author": "Evansdava",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Evansdava/FoundryStats/issues"
+  },
+  "homepage": "https://github.com/Evansdava/FoundryStats#readme",
+  "dependencies": {
+    "discord.js": "^13.2.0"
+  }
+}
