@@ -4,8 +4,6 @@ const bot = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"]});
 const TOKEN = process.env.TOKEN;
 
 module.exports = (io) => {
-    let rolls = [];
-
     bot.login(TOKEN);
 
     bot.on('ready', () => {
@@ -17,14 +15,9 @@ module.exports = (io) => {
             console.log(msg.embeds[0].description)
             roll = msg.embeds[0].description.split('= ')[1]
             console.log(roll)
-            rolls.push(roll)
             io.emit('new roll', roll)
         } else {
             console.log(msg.content)
         }
     });
-
-    function getRolls() {
-        return rolls
-    }
 }

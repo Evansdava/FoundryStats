@@ -2,14 +2,45 @@ const express = require('express');
 const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
+const ss = require('simple-statistics')
 
 app.use(express.static('static'));
 
 // Activate Bot
 bot = require('./bot.js')(io)
 
+let rolls = []
+let mean = 0
+let median = 0
+let mode = 0
+let max = 0
+let min = 0
+
 io.on("connection", (socket) => {
     console.log("User has connected");
+
+    socket.on('update stats', (roll) => {
+        roll = parseInt(roll)        
+
+        mean = ss.addToMean(mean, rolls.length, roll);
+        console.log("Mean: ", mean)
+
+        rolls.push(roll)
+
+        median = ss.median(rolls)
+        console.log("Median: ", median)
+
+        mode = ss.mode(rolls)
+        console.log("Mode: ", mode)
+
+        max = ss.max(rolls)
+        console.log("Max: ", max)
+
+        min = ss.min(rolls)
+        console.log("Min: ", min)
+
+        io.emit('update stats', mean, median, mode, max, min)
+    })
 
     // // Save new user to app
     // socket.on('new user', (username) => {

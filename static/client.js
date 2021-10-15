@@ -20,7 +20,16 @@ $(document).ready(() => {
         
     // })
 
+    socket.on('update stats', (mean, median, mode, max, min) => {
+        $('.stats #mean').text(mean)
+        $('.stats #median').text(median)
+        $('.stats #mode').text(mode)
+        $('.stats #max').text(max)
+        $('.stats #min').text(min)
+    })
+
     socket.on('new roll', (roll) => {
-        $('.main-container').append(`<p>${roll}</p>`)
+        // $('.main-container').append(`<p>${roll}</p>`)
+        socket.emit('update stats', roll)
     })
 })
