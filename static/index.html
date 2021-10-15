@@ -38,11 +38,18 @@
                     <div class="message-container">
                         <h2>Messages</h2>
                     </div>
-                    <form class="username-form">
-                        <input id="username-input" placeholder="Username"></input>
-                        <button id="create-user-btn">Join Chat</button>
-                    </form>
-                    <div class="chat-box"><textarea id="chat-input" placeholder="Type a message"></textarea><button class="btn" id="send-chat-btn">Send</button></div>
+                    <div class="input-group" id="username-form">
+                        <input type="text" class="form-control" id="username-input" placeholder="Username" aria-label="" aria-describedby="basic-addon1">
+                        <div class="input-group-append">
+                          <button class="btn btn-success" id="create-user-btn" type="button">Join Chat</button>
+                        </div>
+                    </div>
+                    <div class="input-group" id="chat-box">
+                        <input type="text" class="form-control" placeholder="Type a message" aria-label="" aria-describedby="basic-addon1" id="chat-input">
+                        <div class="input-group-append">
+                          <button class="btn btn-primary" id="send-chat-btn" type="button">Send</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

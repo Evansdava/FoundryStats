@@ -10,8 +10,8 @@ $(document).ready(() => {
           socket.emit('new user', $('#username-input').val());
           // Save the current user when created
           currentUser = $('#username-input').val();
-          $('.Username-form').remove();
-          $('.chat-box').css('display', 'flex');
+          $('#username-form').remove();
+          $('#chat-box').css('display', 'flex');
         }
     });
 
@@ -40,8 +40,7 @@ $(document).ready(() => {
     socket.on('new message', (data) => {
         $('.message-container').append(`
         <div class="message">
-            <p class="message-user">${data.sender}: </p>
-            <p class="message-text">${data.message}</p>
+            <p class="message-user">${data.sender}: ${data.message}</p>
         </div>
         `);
     })
