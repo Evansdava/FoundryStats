@@ -8,7 +8,7 @@ It consists of a Discord bot listening to a server, to which rolls are sent by a
 ![Image of website](./Webpage.png)
 
 ## How do I use it?
-### The short version: Visit [this webpage]()
+### The short version: Visit [this webpage](https://foundrystats-de.herokuapp.com/)
 From there you can watch rolls appear in real time, pick a username and begin chatting with anyone else connected
 
 ### The long version, or how to get your own rolls:
