@@ -43,6 +43,7 @@ $(document).ready(() => {
             <p class="message-user">${data.sender}: ${data.message}</p>
         </div>
         `);
+        $('.message-container').scrollTop($('.message-container').get(0).scrollHeight);
     })
 
     socket.on('update stats', (mean, median, mode, max, min) => {

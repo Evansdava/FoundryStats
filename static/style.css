@@ -2,3 +2,9 @@
     display: none;
     flex-direction: row;
 }
+
+.scroll {
+    overflow-y: scroll;
+    scroll-behavior: auto;
+    height: 500px;
+}
