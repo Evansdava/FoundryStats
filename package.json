@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/Evansdava/FoundryStats.git"
   },
+  "engines": {
+      "node": "16.x"
+  },
   "author": "Evansdava",
   "license": "ISC",
   "bugs": {

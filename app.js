@@ -107,7 +107,7 @@ app.get('/', (req, res) => {
     res.render('static/index.html');
 })
   
-// Run on port 3000
-server.listen('3000', () => {
-    console.log('Server listening on Port 3000');
+// Run on port defined in .env (suggested: 3000)
+server.listen(process.env.PORT, () => {
+    console.log('Server listening on Port', process.env.PORT);
 })
