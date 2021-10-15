@@ -1,8 +1,8 @@
 {
   "name": "foundrystats",
   "version": "1.0.0",
-  "description": "Bot with associated website for displaying stats based on FoundryVTT dice rolls",
-  "main": "index.js",
+  "description": "Website with associated discord bot for displaying stats based on FoundryVTT dice rolls",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,6 +19,9 @@
   "dependencies": {
     "discord.js": "^13.2.0",
     "dotenv": "^10.0.0",
-    "nodemon": "^2.0.13"
+    "express": "^4.17.1",
+    "http": "^0.0.1-security",
+    "nodemon": "^2.0.13",
+    "socket.io": "^4.3.0"
   }
 }
