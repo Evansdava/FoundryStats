@@ -14,29 +14,35 @@
 <body>
     <div class="container">
         <div class="row pt-3">
-            <div class="col-8">
-                <div class="stats">
+            <div class="col-4">
+                <h2>Stats</h2>
+                <div class="stats px-2 border border-dark">
 
-                    <label for="mean">Mean</label>
+                    <label for="mean">Mean:</label>
                     <div id="mean">0</div>
 
-                    <label for="median">Median</label>
+                    <label for="median">Median:</label>
                     <div id="median">0</div>
 
-                    <label for="mode">Mode</label>
+                    <label for="mode">Mode:</label>
                     <div id="mode">0</div>
 
-                    <label for="max">Max</label>
+                    <label for="max">Max:</label>
                     <div id="max">0</div>
 
-                    <label for="min">Min</label>
+                    <label for="min">Min:</label>
                     <div id="min">0</div>
+                </div>
+            </div>
+            <div class="col-4">
+                <h2>Rolls</h2>
+                <div class="rolls-container px-2 scroll border border-dark">
                 </div>
             </div>
             <div class="col-4 height-100">
                 <h2>Messages</h2>
-                <div class="chat-container scroll-area">
-                    <div class="message-container px-2 scroll">
+                <div class="chat-container">
+                    <div class="message-container px-2 scroll border border-dark">
                     </div>
                 </div>
                 <div class="input-group" id="username-form">
