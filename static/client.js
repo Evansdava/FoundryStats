@@ -2,6 +2,8 @@ $(document).ready(() => {
 
     const socket = io();
     let currentUser;
+    // Get stats on first login
+    socket.emit('update stats')
 
     // When create user button is clicked, log in with entered username
     $('#create-user-btn').click((e)=>{
@@ -46,16 +48,19 @@ $(document).ready(() => {
         $('.message-container').scrollTop($('.message-container').get(0).scrollHeight);
     })
 
-    socket.on('update stats', (mean, median, mode, max, min) => {
+    // Update statistics on the page
+    socket.on('update stats', (mean, median, mode, max, min, total) => {
         $('.stats #mean').text(mean)
         $('.stats #median').text(median)
         $('.stats #mode').text(mode)
         $('.stats #max').text(max)
         $('.stats #min').text(min)
+        $('.stats #total').text(total)
     });
 
+    // Get new stats and display new rolls
     socket.on('new roll', (roll, user) => {
-        socket.emit('update stats', roll)
+        socket.emit('update stats')
         $('.rolls-container').append(`<p>${user} rolled ${roll}</p>`)
         $('.message-container').scrollTop($('.message-container').get(0).scrollHeight);
     })
