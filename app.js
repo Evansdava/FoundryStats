@@ -32,7 +32,7 @@ bot.on('ready', () => {
 
 // Grab roll and user from incoming bot messages
 bot.on('message', msg => {
-    if (msg.embeds.length > 0 && msg.author.bot == true) {
+    if (msg.embeds.length > 0 && msg.author.id == process.env.BOT_ID) {
         let roll = msg.embeds[0].description.split('= ')[1]
         let user = msg.author.username
 
