@@ -12,10 +12,12 @@ module.exports = (io) => {
 
     bot.on('message', msg => {
         if (msg.embeds.length > 0) {
+            console.log(msg.author.username)
             console.log(msg.embeds[0].description)
-            roll = msg.embeds[0].description.split('= ')[1]
+            let roll = msg.embeds[0].description.split('= ')[1]
             console.log(roll)
-            io.emit('new roll', roll)
+            let user = msg.author.username
+            io.emit('new roll', roll, user)
         } else {
             console.log(msg.content)
         }

@@ -25,21 +25,21 @@ io.on("connection", (socket) => {
         roll = parseInt(roll)        
 
         mean = ss.addToMean(mean, rolls.length, roll);
-        console.log("Mean: ", mean)
+        // console.log("Mean: ", mean)
 
         rolls.push(roll)
 
         median = ss.median(rolls)
-        console.log("Median: ", median)
+        // console.log("Median: ", median)
 
         mode = ss.mode(rolls)
-        console.log("Mode: ", mode)
+        // console.log("Mode: ", mode)
 
         max = ss.max(rolls)
-        console.log("Max: ", max)
+        // console.log("Max: ", max)
 
         min = ss.min(rolls)
-        console.log("Min: ", min)
+        // console.log("Min: ", min)
 
         io.emit('update stats', mean, median, mode, max, min)
     })

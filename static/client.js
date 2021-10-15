@@ -54,9 +54,9 @@ $(document).ready(() => {
         $('.stats #min').text(min)
     });
 
-    socket.on('new roll', (roll) => {
+    socket.on('new roll', (roll, user) => {
         socket.emit('update stats', roll)
-        $('.rolls-container').append(`<p>${roll}</p>`)
+        $('.rolls-container').append(`<p>${user} rolled ${roll}</p>`)
         $('.message-container').scrollTop($('.message-container').get(0).scrollHeight);
     })
 })
