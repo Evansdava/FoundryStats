@@ -5,39 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FoundryStats</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="socket.io/socket.io.js"></script>
     <script src="client.js"></script>
     <link href='style.css' rel='stylesheet' type='text/css'></link>
 </head>
 <body>
-    <!-- Only part that is shown on first connection -->
-    <!-- <div class="Username-form">
-        <form class="username-form">
-            <input id="username-input" style="font-size:25pt;" placeholder="Username"></input>
-            <button id="create-user-btn" style="width:150px;height:100px;font-size:21pt;background-color: transparent; border-color: transparent;">Join Game</button>
-        </form>
-    </div> -->
-    <!-- Shown after user chooses a name and logs in -->
-    <div class="main-container">
-        <p>Hello World</p>
-    </div>
-    <div class="stats">
-        
-        <label for="mean">Mean</label>
-        <div id="mean">0</div>
-        
-        <label for="median">Median</label>
-        <div id="median">0</div>
-        
-        <label for="mode">Mode</label>
-        <div id="mode">0</div>
-        
-        <label for="max">Max</label>
-        <div id="max">0</div>
-        
-        <label for="min">Min</label>
-        <div id="min">0</div>
+    <div class="container">
+        <div class="row pt-3">
+            <div class="col-8">
+                <div class="stats">
+
+                    <label for="mean">Mean</label>
+                    <div id="mean">0</div>
+
+                    <label for="median">Median</label>
+                    <div id="median">0</div>
+
+                    <label for="mode">Mode</label>
+                    <div id="mode">0</div>
+
+                    <label for="max">Max</label>
+                    <div id="max">0</div>
+
+                    <label for="min">Min</label>
+                    <div id="min">0</div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="chat-container">
+                    <div class="message-container">
+                        <h2>Messages</h2>
+                    </div>
+                    <form class="username-form">
+                        <input id="username-input" placeholder="Username"></input>
+                        <button id="create-user-btn">Join Chat</button>
+                    </form>
+                    <div class="chat-box"><textarea id="chat-input" placeholder="Type a message"></textarea><button class="btn" id="send-chat-btn">Send</button></div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

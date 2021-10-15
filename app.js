@@ -16,6 +16,8 @@ let mode = 0
 let max = 0
 let min = 0
 
+let onlineUsers = {}
+
 io.on("connection", (socket) => {
     console.log("User has connected");
 
@@ -42,23 +44,27 @@ io.on("connection", (socket) => {
         io.emit('update stats', mean, median, mode, max, min)
     })
 
-    // // Save new user to app
-    // socket.on('new user', (username) => {
-    //     //Save the username as key to access the user's socket id
-    //     onlineUsers[username] = socket.id;
-    //     //Save the username to socket as well
-    //     socket["username"] = username;
-    //     console.log(`${username} has joined the game!`);
-    //     io.emit("new user", username);
-    // })
+    // Save new user to app
+    socket.on('new user', (username) => {
+        //Save the username as key to access the user's socket id
+        onlineUsers[username] = socket.id;
+        //Save the username to socket as well
+        socket["username"] = username;
+        console.log(`${username} has joined the game!`);
+        io.emit("new user", username);
+    })
 
-    // // Handle users disconnecting
-    // socket.on('disconnect', () => {
-    //     // This deletes the user by using the username we saved to the socket
-    //     console.log(`${socket.username} has disconnected`);
-    //     delete onlineUsers[socket.username]
-    //     io.emit('user has left', onlineUsers);
-    // });
+    // Handle users disconnecting
+    socket.on('disconnect', () => {
+        // This deletes the user by using the username we saved to the socket
+        console.log(`${socket.username} has disconnected`);
+        delete onlineUsers[socket.username]
+        io.emit('user has left', onlineUsers);
+    });
+
+    socket.on('new message', (data) => {
+        io.emit('new message', data);
+    });
 });
 
 // Render homepage

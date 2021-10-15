@@ -1,0 +1,4 @@
+.chat-box {
+    display: none;
+    flex-direction: row;
+}
